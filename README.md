@@ -1,15 +1,27 @@
 # EcoTracker - Seguiment d'Impacte Ambiental
 
+## Autor
+Xavier Moreno Navarro
+
 ## Descripció del Projecte
-EcoTracker és una aplicació Java/JavaFX dissenyada per ajudar les empreses a fer el seguiment del seu impacte ambiental. L'aplicació permet registrar i gestionar activitats sostenibles, calculant automàticament la reducció d'emissions de CO₂ associada a aquestes accions.
+EcoTracker és una eina senzilla i pràctica per portar el control de les activitats sostenibles que realitzes al teu dia a dia, pensada per a empreses i particulars conscients del seu impacte ambiental. L'objectiu és facilitar el registre d'accions i veure de manera clara la reducció de CO₂ aconseguida.
+
+## Gestió del Projecte
+Aquest projecte utilitza GitHub Projects per organitzar i fer seguiment de les tasques. Pots consultar el tauler aquí: [GitHub Projects Board](https://github.com/users/xaviermoreno/projects/1)
+
+El tauler està dividit en:
+- 📋 Backlog: Idees i tasques pendents
+- 🚀 To Do: Tasques a fer
+- ⏳ In Progress: En procés
+- ✅ Done: Fet!
 
 ## Característiques Principals
-- Registre d'activitats sostenibles
-- Visualització de dades en taules JavaFX
-- Càlcul automàtic de CO₂ estalviat
-- Exportació de dades a CSV/TXT
-- Base de dades MySQL per persistència
-- Interfície gràfica intuïtiva
+- Registre d'activitats sostenibles amb camps bàsics
+- Visualització de totes les activitats en una taula
+- Càlcul automàtic del total de CO₂ estalviat
+- Exportació de dades a CSV o TXT
+- Dades guardades a MySQL
+- Interfície gràfica amb JavaFX
 - Proves unitàries amb JUnit i Mockito
 
 ## Requisits del Sistema
@@ -20,12 +32,12 @@ EcoTracker és una aplicació Java/JavaFX dissenyada per ajudar les empreses a f
 
 ## Instal·lació i Configuració
 
-1. Clonar el repositori:
+1. Clona el repositori:
 ```bash
 git clone [URL_DEL_REPOSITORI]
 ```
 
-2. Configurar la base de dades MySQL:
+2. Crea la base de dades MySQL:
 ```sql
 CREATE DATABASE ecotracker;
 USE ecotracker;
@@ -40,15 +52,14 @@ CREATE TABLE activitats (
 );
 ```
 
-3. Configurar les variables d'entorn:
-- Crear un fitxer `config.properties` amb les credencials de la base de dades
+3. Configura el fitxer `config.properties` amb les teves credencials de MySQL.
 
-4. Compilar el projecte:
+4. Compila el projecte:
 ```bash
 mvn clean install
 ```
 
-5. Executar l'aplicació:
+5. Executa l'aplicació:
 ```bash
 mvn javafx:run
 ```
@@ -76,37 +87,49 @@ src/
 ```
 
 ## Funcionalitats
-1. Registre d'Activitats
+1. **Registre d'Activitats**
    - Nom de l'activitat
    - Data
    - Categoria
    - Descripció
    - CO₂ estalviat
 
-2. Visualització
+2. **Visualització**
    - Taula amb totes les activitats
    - Total acumulat de CO₂ estalviat
-   - Filtres per data i categoria
+   - Filtres per data i categoria (millorable)
 
-3. Exportació
+3. **Exportació**
    - Format CSV
    - Format TXT
 
-4. Base de Dades
+4. **Base de Dades**
    - Persistència completa
-   - Operacions CRUD
+   - Operacions CRUD bàsiques
 
 ## Testing
 - Proves unitàries amb JUnit
 - Mocks amb Mockito
-- Cobertura de codi > 80%
+- Cobertura de codi > 80% (aprox.)
+
+## Manual d'Usuari
+1. Obre l'aplicació i omple el formulari per afegir una nova activitat sostenible.
+2. Fes clic a "Guardar" per registrar-la.
+3. Consulta totes les activitats a la taula central.
+4. Pots eliminar activitats si t'has equivocat.
+5. Exporta les dades a CSV o TXT per compartir-les o fer informes.
+
+## Notes i Consells
+- Si tens qualsevol problema amb la connexió a la base de dades, revisa el fitxer `config.properties`.
+- Pots modificar les categories d'activitat directament al codi si vols adaptar-ho a la teva realitat.
+- El projecte està pensat per ser senzill i fàcil d'ampliar.
 
 ## Contribució
-1. Fork el projecte
-2. Crea una branca per la teva feature
-3. Commit els teus canvis
-4. Push a la branca
+1. Fes un fork del projecte
+2. Crea una branca per la teva millora
+3. Fes commit dels teus canvis
+4. Puja la branca
 5. Obre un Pull Request
 
 ## Llicència
-Aquest projecte està sota la llicència MIT.
+Projecte sota llicència MIT.
