@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ecotracker.controllers.MainController"
+      spacing="10" padding="10">
+
+    <Text style="-fx-font-size: 24px;" text="EcoTracker - Seguiment d'Impacte Ambiental"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Nom:"/>
+        <TextField fx:id="nomField" promptText="Nom de l'activitat"/>
+        
+        <Label text="Data:"/>
+        <DatePicker fx:id="dataPicker"/>
+        
+        <Label text="Categoria:"/>
+        <ComboBox fx:id="categoriaCombo" promptText="Selecciona categoria"/>
+        
+        <Label text="CO₂ Estalviat:"/>
+        <TextField fx:id="co2Field" promptText="kg CO₂"/>
+    </HBox>
+    
+    <TextArea fx:id="descripcioArea" promptText="Descripció de l'activitat" prefRowCount="3"/>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Guardar" onAction="#handleSave"/>
+        <Button text="Exportar CSV" onAction="#handleExportCSV"/>
+        <Button text="Exportar TXT" onAction="#handleExportTXT"/>
+    </HBox>
+    
+    <TableView fx:id="activitatsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nomColumn" text="Nom"/>
+            <TableColumn fx:id="dataColumn" text="Data"/>
+            <TableColumn fx:id="categoriaColumn" text="Categoria"/>
+            <TableColumn fx:id="descripcioColumn" text="Descripció"/>
+            <TableColumn fx:id="co2Column" text="CO₂ Estalviat"/>
+            <TableColumn fx:id="accionsColumn" text="Accions"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label text="Total CO₂ Estalviat:"/>
+        <Label fx:id="totalCo2Label" style="-fx-font-weight: bold;"/>
+    </HBox>
+</VBox> 
