@@ -1,0 +1,24 @@
+name: EcoTracker Project Board
+description: Tauler de projecte per a EcoTracker
+columns:
+  - name: 📋 Backlog
+    purpose: Tasques pendents d'assignar
+  - name: 🚀 To Do
+    purpose: Tasques assignades i pendents
+  - name: ⏳ In Progress
+    purpose: Tasques en desenvolupament
+  - name: ✅ Done
+    purpose: Tasques completades
+
+workflows:
+  - name: Default Workflow
+    rules:
+      - from: 📋 Backlog
+        to: 🚀 To Do
+        when: issue is assigned
+      - from: 🚀 To Do
+        to: ⏳ In Progress
+        when: issue is labeled "in-progress"
+      - from: ⏳ In Progress
+        to: ✅ Done
+        when: issue is labeled "done" 
